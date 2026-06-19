@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ms31tud.github.io/homeindex-aiyouxi-com-cn/sitemap.xml
