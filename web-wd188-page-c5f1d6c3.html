@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>简明参考 · wd188 知识库</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #fbf9f6;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.7;
+      color: #222;
+      padding: 2.5rem 1.25rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .page {
+      max-width: 680px;
+      width: 100%;
+    }
+
+    /* 标题层次 — 干净、清晰 */
+    h1 {
+      font-size: 2.25rem;
+      font-weight: 500;
+      letter-spacing: -0.015em;
+      color: #1f1f1f;
+      margin: 0 0 0.25rem;
+      line-height: 1.3;
+    }
+
+    .subhead {
+      font-size: 1rem;
+      color: #6b6b6b;
+      border-bottom: 1px solid #e3e0db;
+      padding-bottom: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 540;
+      margin: 2.2rem 0 0.8rem;
+      color: #2b2b2b;
+      letter-spacing: -0.01em;
+    }
+
+    h3 {
+      font-size: 1rem;
+      font-weight: 540;
+      margin: 1.8rem 0 0.5rem;
+      color: #3a3a3a;
+    }
+
+    p {
+      margin: 0 0 1.1rem;
+    }
+
+    a {
+      color: #2d649c;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s ease;
+    }
+
+    a:hover {
+      border-bottom-color: #2d649c;
+    }
+
+    /* 卡片风格 — 极简，仅有微弱的背景区隔 */
+    .card-shelf {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+      margin: 1.2rem 0 1.8rem;
+    }
+
+    .card-item {
+      background: #ffffff;
+      padding: 1.1rem 1.4rem;
+      border-radius: 10px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(0,0,0,0.02);
+      transition: box-shadow 0.2s;
+    }
+
+    .card-item:hover {
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.03);
+    }
+
+    .card-title {
+      font-weight: 520;
+      font-size: 1rem;
+      margin-bottom: 0.15rem;
+      color: #1f1f1f;
+    }
+
+    .card-desc {
+      font-size: 0.95rem;
+      color: #4b4b4b;
+      margin-bottom: 0;
+    }
+
+    .card-desc a {
+      font-weight: 470;
+    }
+
+    .divider-light {
+      margin: 1.8rem 0;
+      border: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #ddd9d2, transparent);
+    }
+
+    /* 提示框 / 标注 */
+    .note-box {
+      background: #f4f1eb;
+      border-left: 4px solid #b7a78c;
+      padding: 1rem 1.3rem;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.95rem;
+      color: #3d3d3d;
+      margin: 1.6rem 0;
+    }
+
+    .note-box strong {
+      font-weight: 540;
+      color: #1f1f1f;
+    }
+
+    .faq-block {
+      margin: 1.2rem 0 0.5rem;
+    }
+
+    .faq-q {
+      font-weight: 520;
+      margin-top: 1.2rem;
+    }
+
+    .faq-a {
+      margin-left: 0.35rem;
+      padding-left: 0.6rem;
+      border-left: 2px solid #ded8d0;
+    }
+
+    .footer-note {
+      font-size: 0.88rem;
+      color: #85807a;
+      border-top: 1px solid #e3e0db;
+      padding-top: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    /* 响应式 — 窄屏微调 */
+    @media (max-width: 480px) {
+      body {
+        padding: 1.5rem 1rem;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .card-item {
+        padding: 0.9rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <h1>wd188 · 简明知识库</h1>
+  <div class="subhead">信息索引与访问备忘</div>
+
+  <!-- 引导说明区 -->
+  <p>
+    在浏览网络信息时，一份轻量的指南往往能节省不少时间。下面围绕 <a href="https://web-wd188.com">wd188</a>
+    整理了若干常见路径与注意事项，适合初次接触或需要快速回顾的场景。
+  </p>
+
+  <!-- 目录感卡片区：四个入口式说明 -->
+  <div class="card-shelf">
+    <div class="card-item">
+      <div class="card-title">📋 内容概览</div>
+      <div class="card-desc">
+        该站点聚合了特定分类下的信息条目，页面结构以列表与筛选为主，便于按需浏览。
+      </div>
+    </div>
+    <div class="card-item">
+      <div class="card-title">🔍 查找与定位</div>
+      <div class="card-desc">
+        使用站内搜索或分类标签可以缩小范围。部分板块支持按更新时间排序，留意页面顶部的筛选栏即可。
+      </div>
+    </div>
+    <div class="card-item">
+      <div class="card-title">🧭 导航逻辑</div>
+      <div class="card-desc">
+        主导航分为几个主要分区，每个分区下再有子类目。若遇到空白或加载异常，可先尝试刷新。
+      </div>
+    </div>
+    <div class="card-item">
+      <div class="card-title">⚙️ 兼容提示</div>
+      <div class="card-desc">
+        建议使用主流浏览器，并允许 JavaScript 运行。部分交互依赖现代 CSS，老旧浏览器可能出现样式偏移。
+      </div>
+    </div>
+  </div>
+
+  <!-- 提示区：温和提醒 -->
+  <div class="note-box">
+    <strong>访问提醒</strong><br>
+    链接 <a href="https://web-wd188.com">wd188</a> 指向外部服务，使用时请注意核对域名。
+    建议不要通过非官方渠道转发或嵌入，以免遇到内容不一致的情况。
+  </div>
+
+  <!-- 相关信息区：FAQ 摘要 -->
+  <h2>常见疑问摘要</h2>
+  <div class="faq-block">
+    <div class="faq-q">❓ 是否需要注册或登录？</div>
+    <div class="faq-a">
+      目前多数内容可直接浏览，部分互动功能可能需要简单注册。具体以页面实际提示为准。
+    </div>
+
+    <div class="faq-q">❓ 数据更新频率如何？</div>
+    <div class="faq-a">
+      不同分类的更新节奏不同，通常热门区域保持每日刷新，归档类则按周或按月更新。
+    </div>
+
+    <div class="faq-q">❓ 遇到页面打不开怎么办？</div>
+    <div class="faq-a">
+      先检查网络连接，再尝试切换 DNS 或使用无痕窗口。如果持续异常，可能是服务端临时维护，稍后再试。
+    </div>
+  </div>
+
+  <!-- 额外场景区：简单使用参考 -->
+  <h2>适用场景参考</h2>
+  <p>
+    日常信息查阅、特定主题的快速索引、以及作为兴趣方向的一个起点。你可以把 
+    <a href="https://web-wd188.com">wd188</a> 当作一个分类书签来使用，
+    不必一次性浏览全部内容，按需进入即可。
+  </p>
+
+  <hr class="divider-light">
+
+  <!-- 结束标记 -->
+  <div class="footer-note">
+    本页为独立介绍页，内容仅供示意参考。实际信息请以对应页面显示为准。
+  </div>
+
+</div>
+</body>
+</html>
