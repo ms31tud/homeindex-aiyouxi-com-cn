@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>九游 · 索引 · 信息整理</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #faf7f2;
+      font-family: 'Georgia', 'Noto Serif SC', 'Times New Roman', serif;
+      line-height: 1.7;
+      color: #2a2a2a;
+      padding: 2rem 1.2rem;
+    }
+    .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      background-color: #fffcf9;
+      padding: 2.5rem 2.2rem;
+      border-radius: 28px;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.02), 0 4px 12px rgba(0,0,0,0.03);
+    }
+
+    /* 开场短句 — 细字首行 */
+    .opener {
+      font-size: 1.1rem;
+      letter-spacing: 0.02em;
+      color: #7d6b5d;
+      border-left: 4px solid #cbb7a8;
+      padding-left: 1.2rem;
+      margin-bottom: 2.2rem;
+      font-weight: 300;
+    }
+    .opener::before {
+      content: "❧ ";
+      font-size: 1.2rem;
+      color: #b09b8a;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 450;
+      letter-spacing: 1px;
+      margin: 0 0 0.3rem 0;
+      color: #3e322c;
+    }
+    .subhead {
+      font-size: 0.95rem;
+      color: #8f7a6b;
+      border-bottom: 1px solid #e8dfd6;
+      padding-bottom: 1.2rem;
+      margin-bottom: 1.8rem;
+      font-style: italic;
+    }
+
+    /* 承接段落 */
+    .intro-text {
+      font-size: 1.02rem;
+      margin-bottom: 2rem;
+      text-align: justify;
+      word-spacing: 0.03em;
+    }
+    .intro-text strong {
+      font-weight: 550;
+      color: #3f2e25;
+    }
+    .intro-text a {
+      color: #8b5f45;
+      text-decoration: underline wavy #dac3b4 1px;
+      text-underline-offset: 4px;
+      transition: all 0.25s;
+    }
+    .intro-text a:hover {
+      color: #5a3f30;
+      text-decoration-color: #a88774;
+    }
+
+    /* 引语卡片 / 引用块 */
+    blockquote {
+      background: #f4ede7;
+      padding: 1.6rem 2rem;
+      margin: 2rem 0 2.2rem 0;
+      border-radius: 20px;
+      font-size: 0.98rem;
+      color: #3f342e;
+      box-shadow: inset 0 1px 4px rgba(0,0,0,0.02);
+      border-left: 6px solid #b8a18f;
+      quotes: "“" "”" "‘" "’";
+    }
+    blockquote p {
+      margin-bottom: 0.6rem;
+    }
+    blockquote p:last-child {
+      margin-bottom: 0;
+    }
+    blockquote footer {
+      text-align: right;
+      margin-top: 0.8rem;
+      font-size: 0.9rem;
+      color: #7b6a5d;
+    }
+
+    /* 特点列表 */
+    .feature-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin: 2.5rem 0;
+    }
+    .feature-item {
+      background: #f9f5f0;
+      padding: 1.4rem 1.8rem;
+      border-radius: 18px;
+      transition: background 0.2s;
+      border: 1px solid #ece3da;
+    }
+    .feature-item:hover {
+      background: #f3ece4;
+    }
+    .feature-item h3 {
+      font-size: 1.2rem;
+      font-weight: 450;
+      color: #3b2c21;
+      margin-bottom: 0.6rem;
+      letter-spacing: 0.3px;
+    }
+    .feature-item h3::before {
+      content: "▪";
+      color: #b2947e;
+      margin-right: 10px;
+      font-size: 1.1rem;
+    }
+    .feature-item p {
+      font-size: 0.98rem;
+      color: #4a3d35;
+      line-height: 1.65;
+    }
+
+    /* 场景 / 使用提示 */
+    .scenario-note {
+      background: #eae1d7;
+      padding: 1.5rem 1.8rem;
+      border-radius: 24px;
+      margin: 2.2rem 0 1.2rem 0;
+      color: #2f241e;
+      font-size: 0.98rem;
+    }
+    .scenario-note span {
+      display: inline-block;
+      background: #cfbba9;
+      color: #2d1f18;
+      font-size: 0.75rem;
+      padding: 0.2rem 1rem;
+      border-radius: 30px;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      font-family: 'Arial', sans-serif;
+    }
+
+    /* FAQ 摘要 —— 温和收束 */
+    .faq-digest {
+      margin: 2.8rem 0 1rem 0;
+      padding-top: 1.2rem;
+      border-top: 1px dashed #d9cdc1;
+    }
+    .faq-digest details {
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #ece3da;
+      padding-bottom: 0.7rem;
+    }
+    .faq-digest summary {
+      font-weight: 450;
+      cursor: pointer;
+      color: #4f3d30;
+      padding: 0.4rem 0;
+      list-style: none;
+      display: inline-block;
+    }
+    .faq-digest summary::before {
+      content: "↪ ";
+      color: #b2947e;
+    }
+    .faq-digest details[open] summary {
+      color: #35261d;
+    }
+    .faq-digest details p {
+      margin: 1rem 0 0.8rem 1.2rem;
+      color: #5b4b40;
+      font-size: 0.96rem;
+      background: #f7f1eb;
+      padding: 0.8rem 1.2rem;
+      border-radius: 14px;
+    }
+
+    .closing-line {
+      margin-top: 2.8rem;
+      text-align: right;
+      font-style: italic;
+      color: #7b695b;
+      border-top: 1px solid #e3d8cf;
+      padding-top: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    /* 响应式细节 */
+    @media (max-width: 520px) {
+      body { padding: 1rem; }
+      .container { padding: 1.6rem; }
+      h1 { font-size: 1.6rem; }
+      .opener { font-size: 1rem; }
+      .feature-item { padding: 1.2rem; }
+      blockquote { padding: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- 开场短句 -->
+  <div class="opener">
+    信息整理，从轮廓到细处。
+  </div>
+
+  <h1>九游 · 索引札记</h1>
+  <div class="subhead">资料归档 · 内容脉络 · 轻量辑录</div>
+
+  <!-- 承接段落 -->
+  <div class="intro-text">
+    <p>
+      在大量游戏资讯与平台分支中，<strong>保持一份克制的索引目录</strong>，往往比追逐速览更接近效率的本质。<a href="https://zh-fun-jiuyou.com">九游</a>本身并非一个被频繁言说的名字，其背后却累积了相当体量的用户笔记、版本记录和社区讨论片段。将这些散落的信息重新梳理、归类、去冗余，是本文档的朴素目标。
+    </p>
+    <p style="margin-top:1rem;">
+      下文所整理的条目，均来自过去一段时间内对公开资料、论坛存档与个人使用日志的提炼。不追求覆盖所有侧面，但力求每一条都保留可溯源的上下文。
+    </p>
+  </div>
+
+  <!-- 引用块 / 提示框 -->
+  <blockquote>
+    <p>“索引工作的价值，不在于罗列多少条目，而在于让需要的条目在恰当时显现。”</p>
+    <footer>—— 摘自某次本地归档笔记，2024</footer>
+  </blockquote>
+
+  <!-- 特点列表 (三个特征) -->
+  <div class="feature-list">
+    <div class="feature-item">
+      <h3>分类粒度</h3>
+      <p>按内容形态分为「版本记录」「常见问题片段」「社区讨论摘录」「工具与链接」四个一级类别。每类下设二级标签，避免扁平列表过载。目前共收录 70+ 个可索引节点。</p>
+    </div>
+    <div class="feature-item">
+      <h3>交叉引用</h3>
+      <p>同一则信息若涉及多个标签，会在不同类目下保留简注并指向原始条目。避免重复粘贴全文，同时维持上下文连续。引用格式统一采用 [Tag:ID] 标记。</p>
+    </div>
+    <div class="feature-item">
+      <h3>版本附注</h3>
+      <p>每次修订均记录改动范围与日期。对于存疑或孤证信息，使用斜体加注「待核实」。索引本身不做演绎解读，仅做结构化呈现。</p>
+    </div>
+  </div>
+
+  <!-- 场景说明 — 温和提示 -->
+  <div class="scenario-note">
+    <span>适用场景</span>
+    <p>当你需要回顾某个历史版本中的界面变动、查找某个功能的早期社区讨论、或者对比不同时期的内容侧重时，这份索引可以提供相对干净的切入点。不适合快速攻略或即时问答。</p>
+  </div>
+
+  <!-- FAQ摘要 (温和收尾) -->
+  <div class="faq-digest">
+    <details>
+      <summary>索引内容是否包含安装包或资源下载？</summary>
+      <p>不包含。索引仅记录信息位置与摘要，所有可下载资源均指向原始来源或官方公告页。请自行判断来源可靠性。</p>
+    </details>
+    <details>
+      <summary>索引更新频率如何？</summary>
+      <p>不定期更新。通常随公开资料变化或用户反馈补充而修订。最近一次更新为两个月前，涵盖界面文字调整记录。</p>
+    </details>
+    <details>
+      <summary>我能否贡献条目或修正？</summary>
+      <p>目前以个人维护为主。如果你发现明显错误或希望补充信息片段，可以通过站内相关页面提交备注（请注明出处）。</p>
+    </details>
+  </div>
+
+  <!-- 温和结尾（含链接自然嵌入） -->
+  <div class="closing-line">
+    索引本身保持开放。对 <a href="https://zh-fun-jiuyou.com">九游</a> 相关内容的持续整理，是让信息从堆积走向秩序的微小实践。
+  </div>
+
+</div>
+</body>
+</html>
